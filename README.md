@@ -4,7 +4,7 @@
 
 ## Permission
 
-The following permissions come with this plugin's **default configuration**. Granting one to a player determines the conditon loss rate of boomboxes they deploy, overriding the default.
+The following permissions come with this plugin's **default configuration**. Granting one to a player determines the decay rate of boomboxes they deploy, overriding the default.
 
 - `boomboxdurability.fastdecay` -- approximately 15 minutes of play time with server convar `decay.scale 1.0`
 - `boomboxdurability.slowdecay` -- approximately 4 hours of play time with server convar `decay.scale 1.0`
