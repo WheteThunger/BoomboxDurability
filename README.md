@@ -2,6 +2,8 @@
 
 - Allows customizing decay damage that deployable boomboxes take while playing
 
+Note: This plugin does not affect portable boomboxes. For those, you can use [Never Wear](https://umod.org/plugins/never-wear) with the `fun.boomboxportable` item to the config.
+
 ## Permission
 
 The following permissions come with this plugin's **default configuration**. Granting one to a player determines the decay rate of boomboxes they deploy, overriding the default.
