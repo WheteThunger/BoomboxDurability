@@ -2,7 +2,10 @@
 
 - Allows customizing decay damage that deployable boomboxes take while playing
 
-Note: This plugin does not affect portable boomboxes. For those, you can use [Never Wear](https://umod.org/plugins/never-wear) with the `fun.boomboxportable` item to the config.
+## Notes
+
+- This plugin does not affect portable boomboxes. For those, you can use [Never Wear](https://umod.org/plugins/never-wear) and add the `fun.boomboxportable` item to the config.
+- As of the August 2021 Rust update, deployable boom boxes no longer take decay damage by default. However, you can continue to use this plugin to add decay damage if you want.
 
 ## Permission
 
