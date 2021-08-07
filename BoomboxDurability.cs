@@ -7,17 +7,16 @@ using System.Linq;
 
 namespace Oxide.Plugins
 {
-    [Info("Boombox Durability", "WhiteThunder", "2.0.0")]
+    [Info("Boombox Durability", "WhiteThunder", "2.0.1")]
     [Description("Allows customizing decay damage that deployable boomboxes take while playing.")]
     internal class BoomboxDurability : CovalencePlugin
     {
         #region Fields
 
         private const string PermissionProfilePrefix = "boomboxdurability";
+        private const float VanillaConditionLossRate = 0;
 
         private Configuration _pluginConfig;
-
-        private float? VanillaConditionLossRate = null;
 
         #endregion
 
@@ -46,24 +45,21 @@ namespace Oxide.Plugins
 
         private void OnEntitySpawned(DeployableBoomBox boomBox)
         {
-            if (VanillaConditionLossRate == null)
-                VanillaConditionLossRate = boomBox.BoxController.ConditionLossRate;
+            if (boomBox.IsStatic)
+                return;
 
             boomBox.BoxController.ConditionLossRate = GetPlayerDecayRate(boomBox.OwnerID);
         }
 
         private void Unload()
         {
-            if (VanillaConditionLossRate == null)
-                return;
-
             foreach (var entity in BaseNetworkable.serverEntities)
             {
                 var boomBox = entity as DeployableBoomBox;
-                if (boomBox == null)
+                if (boomBox == null || boomBox.IsStatic)
                     continue;
 
-                boomBox.BoxController.ConditionLossRate = (float)VanillaConditionLossRate;
+                boomBox.BoxController.ConditionLossRate = VanillaConditionLossRate;
             }
         }
 
