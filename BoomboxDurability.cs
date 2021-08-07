@@ -8,7 +8,7 @@ using System.Linq;
 namespace Oxide.Plugins
 {
     [Info("Boombox Durability", "WhiteThunder", "2.0.1")]
-    [Description("Allows customizing decay damage that deployable boomboxes take while playing.")]
+    [Description("Allows configuring deployable boomboxes to decay while playing.")]
     internal class BoomboxDurability : CovalencePlugin
     {
         #region Fields

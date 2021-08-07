@@ -1,11 +1,11 @@
 ## Features
 
-- Allows customizing decay damage that deployable boomboxes take while playing
+- Allows configuring deployable boomboxes to decay while playing
 
 ## Notes
 
-- This plugin does not affect portable boomboxes. For those, you can use [Never Wear](https://umod.org/plugins/never-wear) and add the `fun.boomboxportable` item to the config.
-- As of the August 2021 Rust update, deployable boom boxes no longer take decay damage by default. However, you can continue to use this plugin to add decay damage if you want.
+- This plugin does not affect portable boomboxes. Portable boomboxes decay while playing by default. If you don't want portable boomboxes to decay, you can install [Never Wear](https://umod.org/plugins/never-wear) and add the `fun.boomboxportable` item to its config.
+- This plugin was originally developed to reduce boombox decay, but as of the August 2021 Rust update, deployable boom boxes no longer decay by default. Now, the only reason to use the plugin is to make boomboxes decay.
 
 ## Permission
 
@@ -46,9 +46,3 @@ Default configuration:
 - `DefaultDecayRate` -- Damage per second dealt to boom boxes while they are playing. Keep in mind that Rust multiplies this value times the server's `decay.scale`, so faster overall decay will cause boomboxes to decay faster while playing as well.
   - As of this writing, the vanilla value for boombox decay rate is `0.025`, which allows for approximately one hour of play time.
 - `ProfilesRequiringPermission` -- Here you can define profiles that will override the default decay rate, if the player who deployed the boombox has the `boomboxdurability.<suffix>` permission.
-
-## FAQ
-
-#### Why do boomboxes decay so quickly while playing in the first place?
-
-Vanilla Rust currently allows boomboxes to play music for approximately one hour. If you are seeing boomboxes decay faster, it's probably because you have a high value for the `decay.scale` convar, which multiplies the damage boomboxes take while playing.
